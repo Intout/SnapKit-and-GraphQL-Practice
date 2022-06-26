@@ -36,6 +36,8 @@ class MainTableViewCell: UITableViewCell {
         
         self.addSubview(backgourndView)
         
+        self.layer.cornerRadius = 10
+        self.backgourndView.layer.cornerRadius = 10
         backgourndView.snp.makeConstraints{ make in
             make.width.equalTo(327)
             make.height.equalTo(265)
@@ -46,16 +48,15 @@ class MainTableViewCell: UITableViewCell {
         
         backgourndView.addSubview(headerImageView)
         
-        headerImageView.image = UIImage(systemName: "car.fill")
-        
+        backgourndView.clipsToBounds = true
+        headerImageView.image = UIImage(systemName: "photo")
         headerImageView.snp.makeConstraints{ make in
             make.top.equalToSuperview()
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
             make.height.equalTo(168)
+            make.width.equalToSuperview()
         }
 
-
+        
         
    
         

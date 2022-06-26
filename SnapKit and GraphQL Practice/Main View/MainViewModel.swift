@@ -7,14 +7,14 @@
 
 import Foundation
 
-protocol MainViewModelDelegate{
+protocol MainViewModelDelegate: AnyObject{
     func didFetched(for data: [CharacterData])
     func didFetchedFailed(with error: Error)
 }
 
 class MainViewModel {
     private var dataModel = MainViewDataModel()
-    private var delegate: MainViewModelDelegate?
+    weak var delegate: MainViewModelDelegate?
     
     func viewDidLoad(){
         fetchData()

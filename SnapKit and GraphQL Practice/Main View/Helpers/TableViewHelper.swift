@@ -14,6 +14,8 @@ class TableViewHelper: NSObject{
     weak var tableView: UITableView?
     weak var viewModel: MainViewModel?
     
+    private var data: [CharacterData] = []
+    
     init(with tableView: UITableView, in vm: MainViewModel){
         super.init()
         self.viewModel = vm
@@ -29,6 +31,13 @@ class TableViewHelper: NSObject{
         tableView?.register(MainTableViewCell.self, forCellReuseIdentifier: "tableViewCell")
     }
     
+    func setData(with data: [CharacterData]){
+        self.data = data
+        DispatchQueue.main.async {
+            self.tableView?.reloadData()
+        }
+    }
+    
 }
 
 extension TableViewHelper: UITableViewDelegate{
@@ -39,12 +48,22 @@ extension TableViewHelper: UITableViewDelegate{
 
 extension TableViewHelper: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        20
+        data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell", for: indexPath) as! MainTableViewCell
         
+        
+        if let imageURL = data[indexPath.item].image{
+            
+
+            
+            cell.headerImageView.loadFrom(URLAddress: imageURL, boundsToCrop: CGRect(x: 0, y: 60, width: .max, height: 168))
+        }
+
+        
         return cell
     }
+
 }

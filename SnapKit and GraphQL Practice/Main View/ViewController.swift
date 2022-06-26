@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         viewModel.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false
-        
+        viewModel.delegate = self
         self.title = "Rick and Morty"
         self.navigationItem.largeTitleDisplayMode = .always
         
@@ -41,6 +41,18 @@ class ViewController: UIViewController {
     }
 
 
+}
+
+extension ViewController: MainViewModelDelegate{
+    func didFetched(for data: [CharacterData]) {
+        tableViewHelper?.setData(with: data)
+    }
+    
+    func didFetchedFailed(with error: Error) {
+        return
+    }
+    
+    
 }
 
 
