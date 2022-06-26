@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = false
         viewModel.delegate = self
         self.navigationItem.largeTitleDisplayMode = .always
+        self.tabNavigationView.delegate = self
         
         self.tableViewHelper = .init(with: tableView, in: viewModel)
         
@@ -39,12 +40,7 @@ class ViewController: UIViewController {
         tableView.configureTableView()
         tableView.addSubview(tabNavigationView)
         navigationItem.titleView = tabNavigationView
-        tabNavigationView.configureView()
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5){
-            self.presentFilterPopUp()
-        }
-        
+        tabNavigationView.configureContainers()
          
     }
 
@@ -73,6 +69,11 @@ extension ViewController{
     }
 }
 
+extension ViewController: FilterButtonDelegate{
+    func didButtonPressed() {
+        presentFilterPopUp()
+    }
+}
 
 #if DEBUG
 import SwiftUI
