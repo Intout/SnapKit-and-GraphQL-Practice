@@ -78,7 +78,8 @@ extension TableViewHelper: UITableViewDataSource{
         
         
         if let imageURL = filteredData[indexPath.item].image{
-            cell.headerImageView.loadFrom(URLAddress: imageURL, boundsToCrop: CGRect(x: 0, y: 60, width: .max, height: 168))
+           // cell.headerImageView.loadFrom(URLAddress: imageURL, boundsToCrop: CGRect(x: 0, y: 60, width: .max, height: 168))
+            cell.headerImageView.loadThumbnail(urlSting: imageURL, cropRect: CGRect(x: 0, y: 60, width: .max, height: 168))
         }
         
         cell.idLabel.text = filteredData[indexPath.item].id ?? "-"

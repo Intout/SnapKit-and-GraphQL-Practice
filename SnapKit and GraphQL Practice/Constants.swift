@@ -16,3 +16,8 @@ enum ProjectFonts: String{
     case robotoRegular = "Roboto-Regular"
     case robotoBold = "Roboto-Bold"
 }
+
+enum Result<T> {
+    case success(T)
+    case failure(Error)
+}

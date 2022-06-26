@@ -16,6 +16,7 @@
 		00C689D928688C1A00E6D767 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C689D828688C1A00E6D767 /* FilterViewModel.swift */; };
 		00C689DC28688CDC00E6D767 /* FilterViewDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C689DB28688CDC00E6D767 /* FilterViewDataModel.swift */; };
 		00C689DE2868914000E6D767 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C689DD2868914000E6D767 /* Constants.swift */; };
+		00C689E12868C6CF00E6D767 /* NetworkingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C689E02868C6CF00E6D767 /* NetworkingHelper.swift */; };
 		00D8AE072866D3DD008EC79D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D8AE062866D3DD008EC79D /* AppDelegate.swift */; };
 		00D8AE092866D3DD008EC79D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D8AE082866D3DD008EC79D /* SceneDelegate.swift */; };
 		00D8AE0B2866D3DD008EC79D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D8AE0A2866D3DD008EC79D /* ViewController.swift */; };
@@ -81,6 +82,7 @@
 		00C689D828688C1A00E6D767 /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
 		00C689DB28688CDC00E6D767 /* FilterViewDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewDataModel.swift; sourceTree = "<group>"; };
 		00C689DD2868914000E6D767 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		00C689E02868C6CF00E6D767 /* NetworkingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingHelper.swift; sourceTree = "<group>"; };
 		00D8AE032866D3DD008EC79D /* SnapKit and GraphQL Practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SnapKit and GraphQL Practice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00D8AE062866D3DD008EC79D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00D8AE082866D3DD008EC79D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -192,6 +194,14 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		00C689DF2868C6B900E6D767 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				00C689E02868C6CF00E6D767 /* NetworkingHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		00D8ADFA2866D3DD008EC79D = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +232,7 @@
 				00D8AE062866D3DD008EC79D /* AppDelegate.swift */,
 				00D8AE082866D3DD008EC79D /* SceneDelegate.swift */,
 				00C689DD2868914000E6D767 /* Constants.swift */,
+				00C689DF2868C6B900E6D767 /* Helpers */,
 				00D8AE7428679BE5008EC79D /* Extensions */,
 				00D8AE3A2866DE3F008EC79D /* Main View */,
 				00643402286887920055932B /* Filter View */,
@@ -616,6 +627,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00C4A58B28679CC2002BAC3F /* UIImageView+Extension.swift in Sources */,
+				00C689E12868C6CF00E6D767 /* NetworkingHelper.swift in Sources */,
 				00D8AE4B28671A55008EC79D /* MainViewModel.swift in Sources */,
 				00D8AE0B2866D3DD008EC79D /* ViewController.swift in Sources */,
 				00D8AE392866DE3B008EC79D /* MainViewDataModel.swift in Sources */,
