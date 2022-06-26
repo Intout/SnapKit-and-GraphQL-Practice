@@ -56,11 +56,12 @@ extension TableViewHelper: UITableViewDataSource{
         
         
         if let imageURL = data[indexPath.item].image{
-            
-
-            
             cell.headerImageView.loadFrom(URLAddress: imageURL, boundsToCrop: CGRect(x: 0, y: 60, width: .max, height: 168))
         }
+        
+        cell.idLabel.text = data[indexPath.item].id ?? "-"
+        cell.nameLabel.text = data[indexPath.item].name ?? "-"
+        cell.locationLabel.text = data[indexPath.item].location ?? "-"
 
         
         return cell
