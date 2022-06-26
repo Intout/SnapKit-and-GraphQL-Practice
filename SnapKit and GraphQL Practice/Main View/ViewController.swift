@@ -58,14 +58,19 @@ extension ViewController: MainViewModelDelegate{
     }
 }
 
-extension ViewController{
+extension ViewController: FilterTagDelegate{
     private func presentFilterPopUp(){
         let filterViewController = FilterViewController()
-        filterViewController.viewModel.setSelectedTag(as: .morty)
+        filterViewController.delegate = self
+        filterViewController.viewModel.setSelectedTag(as: tableViewHelper?.getFilterTag())
         filterViewController.modalPresentationStyle = .overCurrentContext
         filterViewController.modalTransitionStyle = .crossDissolve
         print("View didn't loaded")
         present(filterViewController, animated: true, completion: nil)
+    }
+    
+    func filterChanged(with tag: FilterTags) {
+        tableViewHelper?.setFilterTag(with: tag)
     }
 }
 

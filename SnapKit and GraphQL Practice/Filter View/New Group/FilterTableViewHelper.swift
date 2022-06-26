@@ -62,10 +62,10 @@ extension FilterLabelViewHelper: UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "filterCell", for: indexPath) as! FilterTableViewTableViewCell
         cell.label.text = tags[indexPath.item].rawValue
         
-        print(selectedTag?.rawValue)
+        
         
         if selectedTag == tags[indexPath.item]{
-            cell.backgroundColor = .blue
+            cell.highlightAsSelected()
         }
         
         return cell

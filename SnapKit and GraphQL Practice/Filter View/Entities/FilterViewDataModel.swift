@@ -13,7 +13,7 @@ class FilterViewDataModel{
 }
 
 extension FilterViewDataModel{
-    func setSelectedTag(as tag: FilterTags){
+    func setSelectedTag(as tag: FilterTags?){
         self.selectedTag = tag
     }
     

@@ -27,7 +27,7 @@ class FilterViewModel{
 
 
 extension FilterViewModel{
-    func setSelectedTag(as tag: FilterTags){
+    func setSelectedTag(as tag: FilterTags?){
         dataModel.setSelectedTag(as: tag)
     }
 }

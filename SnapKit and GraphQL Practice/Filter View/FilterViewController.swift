@@ -7,11 +7,17 @@
 
 import UIKit
 
+protocol FilterTagDelegate: AnyObject{
+    func filterChanged(with tag: FilterTags)
+}
+
 class FilterViewController: UIViewController {
 
     private let filterView = FilterUIView()
     private var filterTableViewHelper: FilterLabelViewHelper?
     var viewModel = FilterViewModel()
+    weak var delegate: FilterTagDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.definesPresentationContext = true
@@ -45,6 +51,7 @@ extension FilterViewController: FilterViewModelDelegate{
 
 extension FilterViewController: FilterTableDelegate{
     func didSelect(tag: FilterTags) {
+        delegate?.filterChanged(with: tag)
         dismiss(animated: true)
     }
 }

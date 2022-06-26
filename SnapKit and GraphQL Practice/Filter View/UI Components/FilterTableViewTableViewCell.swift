@@ -23,6 +23,13 @@ class FilterTableViewTableViewCell: UITableViewCell {
         return view
     }()
     
+    fileprivate lazy var indicatorHighlightView: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 12 * 0.66
+        view.backgroundColor = .black
+        return view
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.addSubview(label)
@@ -47,6 +54,20 @@ class FilterTableViewTableViewCell: UITableViewCell {
         }
         
     }
+    
+    func highlightAsSelected(){
+        indicatorView.addSubview(indicatorHighlightView)
+        
+        indicatorHighlightView.snp.makeConstraints{ make in
+            
+            make.center.equalToSuperview()
+            make.width.equalToSuperview().multipliedBy(0.66)
+            make.height.equalToSuperview().multipliedBy(0.66)
+            
+        }
+        
+    }
+    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
