@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		006433D928683C340055932B /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006433D828683C340055932B /* UIView+Extension.swift */; };
 		00C4A58B28679CC2002BAC3F /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C4A58A28679CC2002BAC3F /* UIImageView+Extension.swift */; };
 		00D8AE072866D3DD008EC79D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D8AE062866D3DD008EC79D /* AppDelegate.swift */; };
 		00D8AE092866D3DD008EC79D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D8AE082866D3DD008EC79D /* SceneDelegate.swift */; };
@@ -63,6 +64,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		006433D828683C340055932B /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		007EA65435AF4043987D6F63 /* Pods-SnapKit and GraphQL Practice-SnapKit and GraphQL PracticeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapKit and GraphQL Practice-SnapKit and GraphQL PracticeUITests.release.xcconfig"; path = "Target Support Files/Pods-SnapKit and GraphQL Practice-SnapKit and GraphQL PracticeUITests/Pods-SnapKit and GraphQL Practice-SnapKit and GraphQL PracticeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		00C4A58A28679CC2002BAC3F /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		00D8AE032866D3DD008EC79D /* SnapKit and GraphQL Practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SnapKit and GraphQL Practice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -260,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				00C4A58A28679CC2002BAC3F /* UIImageView+Extension.swift */,
+				006433D828683C340055932B /* UIView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -567,6 +570,7 @@
 				00D8AE502867448E008EC79D /* MainUITableView.swift in Sources */,
 				00D8AE072866D3DD008EC79D /* AppDelegate.swift in Sources */,
 				00D8AE3D2866DE71008EC79D /* ApolloQueryHelper.swift in Sources */,
+				006433D928683C340055932B /* UIView+Extension.swift in Sources */,
 				00D8AE562867695E008EC79D /* TableViewHelper.swift in Sources */,
 				00D8AE492866F4DA008EC79D /* API.swift in Sources */,
 				00D8AE092866D3DD008EC79D /* SceneDelegate.swift in Sources */,

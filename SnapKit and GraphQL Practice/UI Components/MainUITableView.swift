@@ -15,8 +15,6 @@ class MainUITableView: UITableView {
         
         self.translatesAutoresizingMaskIntoConstraints = false
         
-        self.backgroundColor = .blue
-        
         self.snp.makeConstraints{ make in
             make.top.equalTo(self.superview!.safeAreaLayoutGuide.snp.top)
             make.bottom.equalToSuperview()

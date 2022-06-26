@@ -36,26 +36,34 @@ class MainTableViewCell: UITableViewCell {
     
     private func configureCell(){
         
+        self.addSubview(headerImageView)
         self.addSubview(backgourndView)
         
-        self.layer.cornerRadius = 10
-        self.backgourndView.layer.cornerRadius = 10
-        backgourndView.snp.makeConstraints{ make in
-            make.width.equalTo(327)
-            make.height.equalTo(265)
-            make.center.equalToSuperview()
-        }
-        
-        backgourndView.backgroundColor = .systemGray6
-        backgourndView.clipsToBounds = true
         
         // Image View
-        backgourndView.addSubview(headerImageView)
+        headerImageView.clipsToBounds = true
+        headerImageView.layer.cornerRadius = 10
+        headerImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         headerImageView.image = UIImage(systemName: "photo")
         headerImageView.snp.makeConstraints{ make in
             make.top.equalToSuperview()
             make.height.equalTo(168)
-            make.width.equalToSuperview()
+            make.width.equalTo(327)
+            make.centerX.equalToSuperview()
+        }
+        
+        // Background View
+        backgourndView.backgroundColor  = .white
+        backgourndView.clipsToBounds = true
+        self.layer.cornerRadius = 10
+        self.backgourndView.layer.cornerRadius = 10
+        backgourndView.dropShadow(radius: 5, opacity: 0.1, offset: CGSize(width: 0, height: 10))
+        backgourndView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        backgourndView.snp.makeConstraints{ make in
+            make.width.equalTo(327)
+            make.height.equalTo(97)
+            make.top.equalTo(headerImageView.snp.bottom)
+            make.centerX.equalToSuperview()
         }
         
         // ID Labels
