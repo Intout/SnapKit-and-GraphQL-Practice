@@ -13,9 +13,8 @@ class ViewController: UIViewController {
     private var viewModel = MainViewModel()
     private var tableView = MainUITableView()
     private var tableViewHelper: TableViewHelper?
-    private var filterTableViewHelper: FilterLabelViewHelper?
     private var tabNavigationView = MainNavigationBarUIView()
-    private var filterView = FilterUIView()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +22,9 @@ class ViewController: UIViewController {
         viewModel.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false
         viewModel.delegate = self
-        self.title = "Rick and Morty"
         self.navigationItem.largeTitleDisplayMode = .always
         
         self.tableViewHelper = .init(with: tableView, in: viewModel)
-        self.filterTableViewHelper = .init(for: filterView.tableView, in: self.viewModel)
-        self.view.addSubview(filterView)
         
         
         
@@ -38,13 +34,18 @@ class ViewController: UIViewController {
     
     
     private func setupUI(){
-        /*
+        
         self.view.addSubview(tableView)
         tableView.configureTableView()
         tableView.addSubview(tabNavigationView)
         navigationItem.titleView = tabNavigationView
         tabNavigationView.configureView()
-         */
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5){
+            self.presentFilterPopUp()
+        }
+        
+         
     }
 
 
@@ -56,10 +57,20 @@ extension ViewController: MainViewModelDelegate{
     }
     
     func didFetchedFailed(with error: Error) {
+        // (Optional) add message.
         return
     }
-    
-    
+}
+
+extension ViewController{
+    private func presentFilterPopUp(){
+        let filterViewController = FilterViewController()
+        filterViewController.viewModel.setSelectedTag(as: .morty)
+        filterViewController.modalPresentationStyle = .overCurrentContext
+        filterViewController.modalTransitionStyle = .crossDissolve
+        print("View didn't loaded")
+        present(filterViewController, animated: true, completion: nil)
+    }
 }
 
 

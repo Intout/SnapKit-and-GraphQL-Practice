@@ -8,10 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		006433D928683C340055932B /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006433D828683C340055932B /* UIView+Extension.swift */; };
-		006433FB2868545E0055932B /* FilterUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006433FA2868545E0055932B /* FilterUIView.swift */; };
 		006433FD2868560F0055932B /* FilterTableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006433FC2868560F0055932B /* FilterTableViewHelper.swift */; };
 		00643400286862E80055932B /* FilterTableViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006433FF286862E80055932B /* FilterTableViewTableViewCell.swift */; };
 		00C4A58B28679CC2002BAC3F /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C4A58A28679CC2002BAC3F /* UIImageView+Extension.swift */; };
+		00C689D42868884700E6D767 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C689D32868884700E6D767 /* FilterViewController.swift */; };
+		00C689D7286888F400E6D767 /* FilterUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006433FA2868545E0055932B /* FilterUIView.swift */; };
+		00C689D928688C1A00E6D767 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C689D828688C1A00E6D767 /* FilterViewModel.swift */; };
+		00C689DC28688CDC00E6D767 /* FilterViewDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C689DB28688CDC00E6D767 /* FilterViewDataModel.swift */; };
+		00C689DE2868914000E6D767 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C689DD2868914000E6D767 /* Constants.swift */; };
 		00D8AE072866D3DD008EC79D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D8AE062866D3DD008EC79D /* AppDelegate.swift */; };
 		00D8AE092866D3DD008EC79D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D8AE082866D3DD008EC79D /* SceneDelegate.swift */; };
 		00D8AE0B2866D3DD008EC79D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D8AE0A2866D3DD008EC79D /* ViewController.swift */; };
@@ -68,11 +72,15 @@
 
 /* Begin PBXFileReference section */
 		006433D828683C340055932B /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
-		006433FA2868545E0055932B /* FilterUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilterUIView.swift; path = "../New Group/FilterUIView.swift"; sourceTree = "<group>"; };
-		006433FC2868560F0055932B /* FilterTableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewHelper.swift; sourceTree = "<group>"; };
+		006433FA2868545E0055932B /* FilterUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterUIView.swift; sourceTree = "<group>"; };
+		006433FC2868560F0055932B /* FilterTableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilterTableViewHelper.swift; path = "../New Group/FilterTableViewHelper.swift"; sourceTree = "<group>"; };
 		006433FF286862E80055932B /* FilterTableViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewTableViewCell.swift; sourceTree = "<group>"; };
 		007EA65435AF4043987D6F63 /* Pods-SnapKit and GraphQL Practice-SnapKit and GraphQL PracticeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapKit and GraphQL Practice-SnapKit and GraphQL PracticeUITests.release.xcconfig"; path = "Target Support Files/Pods-SnapKit and GraphQL Practice-SnapKit and GraphQL PracticeUITests/Pods-SnapKit and GraphQL Practice-SnapKit and GraphQL PracticeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		00C4A58A28679CC2002BAC3F /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		00C689D32868884700E6D767 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		00C689D828688C1A00E6D767 /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
+		00C689DB28688CDC00E6D767 /* FilterViewDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewDataModel.swift; sourceTree = "<group>"; };
+		00C689DD2868914000E6D767 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		00D8AE032866D3DD008EC79D /* SnapKit and GraphQL Practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SnapKit and GraphQL Practice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00D8AE062866D3DD008EC79D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00D8AE082866D3DD008EC79D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,22 +155,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		006433FE286862BA0055932B /* Filter View */ = {
+		00643402286887920055932B /* Filter View */ = {
+			isa = PBXGroup;
+			children = (
+				00C689D32868884700E6D767 /* FilterViewController.swift */,
+				00C689D828688C1A00E6D767 /* FilterViewModel.swift */,
+				00C689D62868888900E6D767 /* UI Components */,
+				00C689D52868887F00E6D767 /* Helpers */,
+				00C689DA28688CCB00E6D767 /* Entities */,
+			);
+			path = "Filter View";
+			sourceTree = "<group>";
+		};
+		00C689D52868887F00E6D767 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				006433FC2868560F0055932B /* FilterTableViewHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		00C689D62868888900E6D767 /* UI Components */ = {
 			isa = PBXGroup;
 			children = (
 				006433FA2868545E0055932B /* FilterUIView.swift */,
 				006433FF286862E80055932B /* FilterTableViewTableViewCell.swift */,
 			);
-			path = "Filter View";
+			path = "UI Components";
 			sourceTree = "<group>";
 		};
-		00643401286868E90055932B /* Main Table View */ = {
+		00C689DA28688CCB00E6D767 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				00D8AE4F2867448E008EC79D /* MainUITableView.swift */,
-				00D8AE7228678BC2008EC79D /* MainTableViewCell.swift */,
+				00C689DB28688CDC00E6D767 /* FilterViewDataModel.swift */,
 			);
-			path = "Main Table View";
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		00D8ADFA2866D3DD008EC79D = {
@@ -194,8 +221,10 @@
 				00D8AE462866EDE9008EC79D /* schema.json */,
 				00D8AE062866D3DD008EC79D /* AppDelegate.swift */,
 				00D8AE082866D3DD008EC79D /* SceneDelegate.swift */,
+				00C689DD2868914000E6D767 /* Constants.swift */,
 				00D8AE7428679BE5008EC79D /* Extensions */,
 				00D8AE3A2866DE3F008EC79D /* Main View */,
+				00643402286887920055932B /* Filter View */,
 				00D8AE0F2866D3F0008EC79D /* Assets.xcassets */,
 				00D8AE59286787DD008EC79D /* Fonts */,
 				00D8AE112866D3F0008EC79D /* LaunchScreen.storyboard */,
@@ -226,10 +255,9 @@
 			children = (
 				00D8AE0A2866D3DD008EC79D /* ViewController.swift */,
 				00D8AE4A28671A55008EC79D /* MainViewModel.swift */,
-				00D8AE3F2866DEAC008EC79D /* Queries.graphql */,
+				00D8AE3B2866DE50008EC79D /* Helpers */,
 				00D8AE3E2866DE7E008EC79D /* Entities */,
 				00D8AE4E2867444A008EC79D /* UI Components */,
-				00D8AE3B2866DE50008EC79D /* Helpers */,
 			);
 			path = "Main View";
 			sourceTree = "<group>";
@@ -240,7 +268,6 @@
 				00D8AE482866F4DA008EC79D /* API.swift */,
 				00D8AE3C2866DE71008EC79D /* ApolloQueryHelper.swift */,
 				00D8AE552867695E008EC79D /* TableViewHelper.swift */,
-				006433FC2868560F0055932B /* FilterTableViewHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -248,6 +275,7 @@
 		00D8AE3E2866DE7E008EC79D /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				00D8AE3F2866DEAC008EC79D /* Queries.graphql */,
 				00D8AE382866DE3B008EC79D /* MainViewDataModel.swift */,
 				00D8AE4C28673869008EC79D /* Data.swift */,
 			);
@@ -257,8 +285,8 @@
 		00D8AE4E2867444A008EC79D /* UI Components */ = {
 			isa = PBXGroup;
 			children = (
-				00643401286868E90055932B /* Main Table View */,
-				006433FE286862BA0055932B /* Filter View */,
+				00D8AE4F2867448E008EC79D /* MainUITableView.swift */,
+				00D8AE7228678BC2008EC79D /* MainTableViewCell.swift */,
 				00D8AE5328675BB7008EC79D /* MainNavigationBarUIView.swift */,
 			);
 			path = "UI Components";
@@ -593,14 +621,18 @@
 				00D8AE392866DE3B008EC79D /* MainViewDataModel.swift in Sources */,
 				00D8AE5428675BB7008EC79D /* MainNavigationBarUIView.swift in Sources */,
 				00D8AE502867448E008EC79D /* MainUITableView.swift in Sources */,
+				00C689D928688C1A00E6D767 /* FilterViewModel.swift in Sources */,
+				00C689D7286888F400E6D767 /* FilterUIView.swift in Sources */,
 				00643400286862E80055932B /* FilterTableViewTableViewCell.swift in Sources */,
 				00D8AE072866D3DD008EC79D /* AppDelegate.swift in Sources */,
 				00D8AE3D2866DE71008EC79D /* ApolloQueryHelper.swift in Sources */,
+				00C689DE2868914000E6D767 /* Constants.swift in Sources */,
 				006433D928683C340055932B /* UIView+Extension.swift in Sources */,
-				006433FB2868545E0055932B /* FilterUIView.swift in Sources */,
 				00D8AE562867695E008EC79D /* TableViewHelper.swift in Sources */,
+				00C689D42868884700E6D767 /* FilterViewController.swift in Sources */,
 				00D8AE492866F4DA008EC79D /* API.swift in Sources */,
 				00D8AE092866D3DD008EC79D /* SceneDelegate.swift in Sources */,
+				00C689DC28688CDC00E6D767 /* FilterViewDataModel.swift in Sources */,
 				00D8AE7328678BC2008EC79D /* MainTableViewCell.swift in Sources */,
 				00D8AE4D28673869008EC79D /* Data.swift in Sources */,
 				006433FD2868560F0055932B /* FilterTableViewHelper.swift in Sources */,
