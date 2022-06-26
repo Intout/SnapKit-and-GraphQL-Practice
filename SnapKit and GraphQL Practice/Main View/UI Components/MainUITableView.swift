@@ -10,11 +10,18 @@ import SnapKit
 
 class MainUITableView: UITableView {
     
-    func configureTableView(){
-        
-        
+    
+    override init(frame: CGRect, style: UITableView.Style) {
+        super.init(frame: frame, style: style)
         self.translatesAutoresizingMaskIntoConstraints = false
         self.separatorStyle = .none
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configureConstraints(){
         self.snp.makeConstraints{ make in
             make.top.equalTo(self.superview!.safeAreaLayoutGuide.snp.top)
             make.bottom.equalToSuperview()

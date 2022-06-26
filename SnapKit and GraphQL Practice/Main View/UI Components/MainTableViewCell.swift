@@ -11,40 +11,88 @@ import SnapKit
 class MainTableViewCell: UITableViewCell {
 
     
-    private var backgourndView = UIView()
-    private(set) var headerImageView = UIImageView()
+    private var backgourndView: UIView = {
+        let view = UIView()
+        view.backgroundColor  = .white
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 10
+        view.dropShadow(radius: 5, opacity: 0.1, offset: CGSize(width: 0, height: 10))
+        view.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        return view
+    }()
+    private(set) var headerImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 10
+        imageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        imageView.image = UIImage(systemName: "photo")
+        return imageView
+    }()
     
-    private var nameTitleLabel = UILabel()
-    private(set) var nameLabel = UILabel()
+    private var nameTitleLabel: UILabel = {
+       let label = UILabel()
+        label.text = "Name:"
+        label.font = UIFont(name: ProjectFonts.robotoRegular.rawValue, size: 16)
+        return label
+    }()
+    private(set) var nameLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor(red: 128/255, green: 128/255, blue: 128/255, alpha: 1)
+        label.font = UIFont(name: ProjectFonts.robotoRegular.rawValue, size: 16)
+        return label
+    }()
     
-    private var locationTitleLabel = UILabel()
-    private(set) var locationLabel = UILabel()
+    private var locationTitleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Location:"
+        label.font = UIFont(name: ProjectFonts.robotoRegular.rawValue, size: 16)
+        return label
+    }()
+    private(set) var locationLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor(red: 128/255, green: 128/255, blue: 128/255, alpha: 1)
+        label.font = UIFont(name: ProjectFonts.robotoRegular.rawValue, size: 16)
+        return label
+    }()
     
-    private var idTitleLabel = UILabel()
-    private(set) var idLabel = UILabel()
-    
-    let font = UIFont(name: "Roboto-Regular", size: 16)
+    private var idTitleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "#id:"
+        label.font = UIFont(name: ProjectFonts.robotoRegular.rawValue, size: 16)
+        return label
+    }()
+    private(set) var idLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor(red: 128/255, green: 128/255, blue: 128/255, alpha: 1)
+        label.font = UIFont(name: ProjectFonts.robotoRegular.rawValue, size: 16)
+        return label
+    }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        configureCell()
+        self.layer.cornerRadius = 10
+        
+        self.addSubview(headerImageView)
+        self.addSubview(backgourndView)
+        
+        backgourndView.addSubview(idLabel)
+        backgourndView.addSubview(idTitleLabel)
+        backgourndView.addSubview(nameLabel)
+        backgourndView.addSubview(nameTitleLabel)
+        backgourndView.addSubview(locationLabel)
+        backgourndView.addSubview(locationTitleLabel)
+        
+        
+        configureConstraints()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configureCell(){
-        
-        self.addSubview(headerImageView)
-        self.addSubview(backgourndView)
-        
+    private func configureConstraints(){
         
         // Image View
-        headerImageView.clipsToBounds = true
-        headerImageView.layer.cornerRadius = 10
-        headerImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        headerImageView.image = UIImage(systemName: "photo")
         headerImageView.snp.makeConstraints{ make in
             make.top.equalToSuperview()
             make.height.equalTo(168)
@@ -53,12 +101,6 @@ class MainTableViewCell: UITableViewCell {
         }
         
         // Background View
-        backgourndView.backgroundColor  = .white
-        backgourndView.clipsToBounds = true
-        self.layer.cornerRadius = 10
-        self.backgourndView.layer.cornerRadius = 10
-        backgourndView.dropShadow(radius: 5, opacity: 0.1, offset: CGSize(width: 0, height: 10))
-        backgourndView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         backgourndView.snp.makeConstraints{ make in
             make.width.equalTo(327)
             make.height.equalTo(97)
@@ -67,38 +109,22 @@ class MainTableViewCell: UITableViewCell {
         }
         
         // ID Labels
-        backgourndView.addSubview(idLabel)
-        backgourndView.addSubview(idTitleLabel)
-        
-        idTitleLabel.text = "#id:"
-        idTitleLabel.font = font
         idTitleLabel.snp.makeConstraints{ make in
             make.trailing.equalTo(idLabel.snp.leading).offset(-5)
             make.top.equalTo(headerImageView.snp.bottom).offset(8)
         }
 
-        idLabel.text = "1"
-        idLabel.font = font
-        idLabel.textColor = UIColor(red: 128/255, green: 128/255, blue: 128/255, alpha: 1)
         idLabel.snp.makeConstraints{ make in
             make.top.equalTo(headerImageView.snp.bottom).offset(8)
             make.trailing.equalTo(-17)
         }
         
         // Name Labels
-        backgourndView.addSubview(nameLabel)
-        backgourndView.addSubview(nameTitleLabel)
-        
-        nameTitleLabel.text = "Name:"
-        nameTitleLabel.font = font
         nameTitleLabel.snp.makeConstraints{ make in
             make.top.equalTo(idLabel.snp.bottom).offset(8)
             make.leading.equalTo(8)
         }
         
-        nameLabel.text = "name"
-        nameLabel.font = font
-        nameLabel.textColor = UIColor(red: 128/255, green: 128/255, blue: 128/255, alpha: 1)
         nameLabel.snp.makeConstraints{ make in
             make.top.equalTo(idLabel.snp.bottom).offset(8)
             make.leading.equalTo(nameTitleLabel.snp.trailing).offset(5)
@@ -106,19 +132,11 @@ class MainTableViewCell: UITableViewCell {
         }
         
         // Location Labels
-        backgourndView.addSubview(locationLabel)
-        backgourndView.addSubview(locationTitleLabel)
-        
-        locationTitleLabel.text = "Location:"
-        locationTitleLabel.font = font
         locationTitleLabel.snp.makeConstraints{ make in
             make.top.equalTo(nameTitleLabel.snp.bottom).offset(8)
             make.leading.equalTo(8)
         }
         
-        locationLabel.text = "location"
-        locationLabel.font = font
-        locationLabel.textColor = UIColor(red: 128/255, green: 128/255, blue: 128/255, alpha: 1)
         locationLabel.snp.makeConstraints{ make in
             make.top.equalTo(nameTitleLabel.snp.bottom).offset(8)
             make.leading.equalTo(locationTitleLabel.snp.trailing).offset(5)

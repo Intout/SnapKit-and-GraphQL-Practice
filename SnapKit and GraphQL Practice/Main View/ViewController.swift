@@ -10,41 +10,35 @@ import SnapKit
 
 
 class ViewController: UIViewController {
-    private var viewModel = MainViewModel()
-    private var tableView = MainUITableView()
-    private var tableViewHelper: TableViewHelper?
-    private var tabNavigationView = MainNavigationBarUIView()
     
-
+    private var viewModel = MainViewModel()
+    private var tableViewHelper: TableViewHelper?
+    
+    private lazy var tableView = MainUITableView()
+    private lazy var tabNavigationView = MainNavigationBarUIView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         viewModel.viewDidLoad()
-        self.navigationController?.isNavigationBarHidden = false
+
         viewModel.delegate = self
-        self.navigationItem.largeTitleDisplayMode = .always
-        self.tabNavigationView.delegate = self
+        tabNavigationView.delegate = self
         
         self.tableViewHelper = .init(with: tableView, in: viewModel)
         
-        
-        
-        
         setupUI()
     }
-    
-    
-    private func setupUI(){
         
-        self.view.addSubview(tableView)
-        tableView.configureTableView()
-        tableView.addSubview(tabNavigationView)
+    private func setupUI(){
+        // tableView and navigationView must have constraints after added as a subView.
+        view.addSubview(tableView)
+        tableView.configureConstraints()
+        
         navigationItem.titleView = tabNavigationView
-        tabNavigationView.configureContainers()
+        tabNavigationView.configureConstraints()
          
     }
-
-
 }
 
 extension ViewController: MainViewModelDelegate{
@@ -53,7 +47,7 @@ extension ViewController: MainViewModelDelegate{
     }
     
     func didFetchedFailed(with error: Error) {
-        // (Optional) add message.
+        // (Optional) Add message.
         return
     }
 }
@@ -65,7 +59,6 @@ extension ViewController: FilterTagDelegate{
         filterViewController.viewModel.setSelectedTag(as: tableViewHelper?.getFilterTag())
         filterViewController.modalPresentationStyle = .overCurrentContext
         filterViewController.modalTransitionStyle = .crossDissolve
-        print("View didn't loaded")
         present(filterViewController, animated: true, completion: nil)
     }
     
@@ -79,25 +72,3 @@ extension ViewController: FilterButtonDelegate{
         presentFilterPopUp()
     }
 }
-
-#if DEBUG
-import SwiftUI
-
-struct InfoVCRepresentable: UIViewControllerRepresentable {
-    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
-        // leave this empty
-    }
-    
-    @available(iOS 13.0.0, *)
-    func makeUIViewController(context: Context) -> UIViewController {
-        ViewController()
-    }
-}
-
-@available(iOS 13.0, *)
-struct InfoVCPreview: PreviewProvider {
-    static var previews: some View {
-        InfoVCRepresentable()
-    }
-}
-#endif

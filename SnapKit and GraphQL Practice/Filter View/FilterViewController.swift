@@ -13,33 +13,31 @@ protocol FilterTagDelegate: AnyObject{
 
 class FilterViewController: UIViewController {
 
-    private let filterView = FilterUIView()
-    private var filterTableViewHelper: FilterLabelViewHelper?
-    var viewModel = FilterViewModel()
+    fileprivate let filterView = FilterUIView()
+    fileprivate var filterTableViewHelper: FilterLabelViewHelper?
+    
+    private(set) var viewModel = FilterViewModel()
     weak var delegate: FilterTagDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.definesPresentationContext = true
-        self.viewModel.delegate = self
         self.filterTableViewHelper = .init(for: filterView.tableView, in: viewModel)
+        
+        self.viewModel.delegate = self
         self.filterTableViewHelper?.delegate = self
-        self.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
-        view.addSubview(filterView)
+        self.filterTableViewHelper?.delegate = self
         self.viewModel.viewDidLoad()
+        setupUI()
         
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setupUI(){
+        self.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
+        view.addSubview(filterView)
+        
     }
-    */
 
 }
 

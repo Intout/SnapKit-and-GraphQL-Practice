@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// Handles communication between button and superView.
 protocol FilterButtonDelegate: AnyObject{
     
     func didButtonPressed()
@@ -40,14 +41,13 @@ class MainNavigationBarUIView: UIView {
         self.addSubview(button)
         button.addTarget(self, action: #selector(buttonPressed), for: .touchDown)
         
-        
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureContainers(){
+    func configureConstraints(){
         title.snp.makeConstraints{ make in
             make.center.equalToSuperview()
         }
@@ -60,6 +60,7 @@ class MainNavigationBarUIView: UIView {
 
     }
     
+    /// Button action.
     @objc fileprivate func buttonPressed(){
         delegate?.didButtonPressed()
     }

@@ -63,7 +63,7 @@ extension FilterLabelViewHelper: UITableViewDataSource{
         cell.label.text = tags[indexPath.item].rawValue
         
         
-        
+        // Highlights coresponding cell of selected tag.
         if selectedTag == tags[indexPath.item]{
             cell.highlightAsSelected()
         }

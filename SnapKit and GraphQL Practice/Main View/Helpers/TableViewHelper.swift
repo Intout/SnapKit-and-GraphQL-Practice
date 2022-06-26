@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 
 
+/// Helper method for TableView.
+/// Table View UI oprations will be executed here after required data fetched via viewModel
 class TableViewHelper: NSObject{
     
     weak var tableView: UITableView?
@@ -18,6 +20,10 @@ class TableViewHelper: NSObject{
     private var filterTag: FilterTags?
     private var filteredData: [CharacterData] = []
     
+    /// Takes corresponfing tableView to handle data and view operations.
+    /// - Parameters:
+    ///   - tableView: tableView to handle.
+    ///   - vm: View model of superView.
     init(with tableView: UITableView, in vm: MainViewModel){
         super.init()
         self.viewModel = vm
@@ -29,10 +35,13 @@ class TableViewHelper: NSObject{
         register()
     }
     
+    /// Register custom view elements for TableView.
     private func register(){
         tableView?.register(MainTableViewCell.self, forCellReuseIdentifier: "tableViewCell")
     }
     
+    /// Takes and sets tableView required information data. TableView data will be reloaded in async UI thread to display new data.
+    /// - Parameter data: Array of charater infromations to display on tableView
     func setData(with data: [CharacterData]){
         self.data = data
         self.filteredData = data
@@ -41,6 +50,11 @@ class TableViewHelper: NSObject{
         }
     }
     
+    /// Sets tableViews Filter tag.
+    /// If filter tag is same with previous one, filter tag gets deleted and all data will be shown.
+    /// If filter tag is new, tableView data gets filtered and new tag is set as current one.
+    /// TableView data will be reloaded in async UI thread to display new data.
+    /// - Parameter tag: Fitler tag to filter data with.
     func setFilterTag(with tag: FilterTags){
         if tag == filterTag{
             self.filteredData = data
@@ -64,6 +78,7 @@ class TableViewHelper: NSObject{
 
 extension TableViewHelper: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        // 16 is for padding.
         265 + 16
     }
 }
@@ -78,7 +93,6 @@ extension TableViewHelper: UITableViewDataSource{
         
         
         if let imageURL = filteredData[indexPath.item].image{
-           // cell.headerImageView.loadFrom(URLAddress: imageURL, boundsToCrop: CGRect(x: 0, y: 60, width: .max, height: 168))
             cell.headerImageView.loadThumbnail(urlSting: imageURL, cropRect: CGRect(x: 0, y: 60, width: .max, height: 168))
         }
         

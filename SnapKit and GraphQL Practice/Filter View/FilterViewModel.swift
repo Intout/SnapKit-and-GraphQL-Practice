@@ -11,6 +11,7 @@ protocol FilterViewModelDelegate: AnyObject{
     func didDataFetched(for tag: FilterTags?)
 }
 
+/// Fetches data model and processes for coresponding views.
 class FilterViewModel{
     
     private var dataModel = FilterViewDataModel()

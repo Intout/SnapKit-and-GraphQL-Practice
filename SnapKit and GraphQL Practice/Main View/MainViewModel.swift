@@ -7,11 +7,15 @@
 
 import Foundation
 
+/// Delegation  to communicate with View.
 protocol MainViewModelDelegate: AnyObject{
+    /// If 
+    /// - Parameter data: <#data description#>
     func didFetched(for data: [CharacterData])
     func didFetchedFailed(with error: Error)
 }
 
+/// Fetches data model and processes for coresponding views.
 class MainViewModel {
     private var dataModel = MainViewDataModel()
     weak var delegate: MainViewModelDelegate?

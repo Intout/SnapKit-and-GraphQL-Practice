@@ -9,12 +9,11 @@ import Foundation
 
 class MainViewDataModel{
     
-    private let url = URL(string: "https://rickandmortyapi.com/graphql")
     
+    
+    /// Fetch data using ApolloQuery Helper and returns a complationHandler
+    /// - Parameter complationHandler: Fetched charater data and error for request.
     func fetchData(complationHandler: @escaping ([CharacterData]?, Error?) -> ()){
-        guard let url = url else {
-            return
-        }
         
         ApolloQueryHelper.shared.apollo.fetch(query: CharactersQuery()){ result in
             switch result{
