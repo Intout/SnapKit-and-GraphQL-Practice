@@ -32,7 +32,7 @@ class MainNavigationBarUIView: UIView {
         }
         
         title.text = "Rick and Morty"
-        title.font = UIFont(name: "Roboto-Regular", size: 24)
+        title.font = UIFont(name: "Roboto-Bold", size: 24)
         
         button.setImage(buttonImage, for: .normal)
         button.snp.makeConstraints{ make in

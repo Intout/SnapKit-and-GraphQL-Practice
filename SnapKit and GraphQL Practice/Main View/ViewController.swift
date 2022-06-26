@@ -13,7 +13,9 @@ class ViewController: UIViewController {
     private var viewModel = MainViewModel()
     private var tableView = MainUITableView()
     private var tableViewHelper: TableViewHelper?
+    private var filterTableViewHelper: FilterLabelViewHelper?
     private var tabNavigationView = MainNavigationBarUIView()
+    private var filterView = FilterUIView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +27,10 @@ class ViewController: UIViewController {
         self.navigationItem.largeTitleDisplayMode = .always
         
         self.tableViewHelper = .init(with: tableView, in: viewModel)
-    
+        self.filterTableViewHelper = .init(for: filterView.tableView, in: self.viewModel)
+        self.view.addSubview(filterView)
+        
+        
         
         
         setupUI()
@@ -33,11 +38,13 @@ class ViewController: UIViewController {
     
     
     private func setupUI(){
+        /*
         self.view.addSubview(tableView)
         tableView.configureTableView()
         tableView.addSubview(tabNavigationView)
         navigationItem.titleView = tabNavigationView
         tabNavigationView.configureView()
+         */
     }
 
 

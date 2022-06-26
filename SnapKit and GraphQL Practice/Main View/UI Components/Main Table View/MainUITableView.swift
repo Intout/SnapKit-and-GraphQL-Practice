@@ -14,7 +14,7 @@ class MainUITableView: UITableView {
         
         
         self.translatesAutoresizingMaskIntoConstraints = false
-        
+        self.separatorStyle = .none
         self.snp.makeConstraints{ make in
             make.top.equalTo(self.superview!.safeAreaLayoutGuide.snp.top)
             make.bottom.equalToSuperview()
