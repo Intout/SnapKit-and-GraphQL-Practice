@@ -3,14 +3,14 @@
 
 In this application Rick and Morty (TV show) characters fetched from GraphQL's Rick and Morty RestAPI using Apollo GraphQL wrapper for iOS. Fetched information can be filtered for Rick or Morty characters. Image, name, location and ID informations that fetched from RestAPI, presented with programmatic UIKit, auto layout  assisted with SnapKit via following MVVM pattern.
 
-[x] GraphQL query.
-[x] Image downloading and caching.
-[x] MVVM pattern.
-[x] Programmatic UIKit.
-[x] Imported Roboto font as applications font.
-[x] Dark Mode is supported.
-[x] Integration Test.
-[x] UITest.
+✅ GraphQL query.
+✅  Image downloading and caching.
+✅  MVVM pattern.
+✅  Programmatic UIKit.
+✅  Imported Roboto font as applications font.
+✅  Dark Mode is supported.
+✅  Integration Test.
+✅  UITest.
 
 ## Method
 
@@ -77,7 +77,7 @@ UITest flow as follows:
 
 ### Integration Test
 
-Application has 2 main data process methods. First one, fetching charater data from RestAPI; second one, downloanding thumbnail image from given URL. If operation results are succesful, test cases considered successful, otherwise cases considered as failure.
+Application has two main data process methods. First one, fetching charater data from RestAPI; second one, downloanding thumbnail image from given URL. If operation results are succesful, test cases considered successful, otherwise cases considered as failure.
 
 
 
