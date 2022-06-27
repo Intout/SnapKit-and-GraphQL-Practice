@@ -3,7 +3,14 @@
 
 In this application Rick and Morty (TV show) characters fetched from GraphQL's Rick and Morty RestAPI using Apollo GraphQL wrapper for iOS. Fetched information can be filtered for Rick or Morty characters. Image, name, location and ID informations that fetched from RestAPI, presented with programmatic UIKit, auto layout  assisted with SnapKit via following MVVM pattern.
 
-Imported Roboto font as applications font.
+[x] GraphQL query.
+[x] Image downloading and caching.
+[x] MVVM pattern.
+[x] Programmatic UIKit.
+[x] Imported Roboto font as applications font.
+[x] Dark Mode is supported.
+[x] Integration Test.
+[x] UITest.
 
 ## Method
 
@@ -53,3 +60,24 @@ If a filter tags is already seleceted, corresponding tableView cell gets highlig
 If user selects same filter tags cell, selected tag setted to nil on Main Table View.
 
 ![MVVM diagram for Filter View.](./images/FilterViewMVVMPattern.png "Filter View MVVM") 
+
+### UITest
+
+General functionality of the application is tested via UITest. If application launch arguments is "Testing" animataion disabled for the performance of the testing. 
+UITest flow as follows:
+
+- Application launches without animations.
+- Cell count in main table view added to memory.
+- Filter button gets pressed.
+- If Filter View appears, first case is successful.
+- First cell in the filter table view gets pressed.
+- If Filter View disappers, second case is successful.
+- If current cell amount lesser than previous one (If data filtered), third case is sucessful.
+- Process from the swcond step is repeated. This time if current cell amount greater than previous one (filter removed), last case is successful.
+
+### Integration Test
+
+Application has 2 main data process methods. First one, fetching charater data from RestAPI; second one, downloanding thumbnail image from given URL. If operation results are succesful, test cases considered successful, otherwise cases considered as failure.
+
+
+

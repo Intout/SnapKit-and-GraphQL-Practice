@@ -13,6 +13,7 @@
 		00C4A58B28679CC2002BAC3F /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C4A58A28679CC2002BAC3F /* UIImageView+Extension.swift */; };
 		00C61D2D2869A3E500D2E747 /* UITestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C61D2C2869A3E500D2E747 /* UITestConstants.swift */; };
 		00C61D2E2869A3E500D2E747 /* UITestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C61D2C2869A3E500D2E747 /* UITestConstants.swift */; };
+		00C61D302869D69E00D2E747 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 00C61D2F2869D69E00D2E747 /* README.md */; };
 		00C689D42868884700E6D767 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C689D32868884700E6D767 /* FilterViewController.swift */; };
 		00C689D7286888F400E6D767 /* FilterUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006433FA2868545E0055932B /* FilterUIView.swift */; };
 		00C689D928688C1A00E6D767 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C689D828688C1A00E6D767 /* FilterViewModel.swift */; };
@@ -81,6 +82,7 @@
 		007EA65435AF4043987D6F63 /* Pods-SnapKit and GraphQL Practice-SnapKit and GraphQL PracticeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapKit and GraphQL Practice-SnapKit and GraphQL PracticeUITests.release.xcconfig"; path = "Target Support Files/Pods-SnapKit and GraphQL Practice-SnapKit and GraphQL PracticeUITests/Pods-SnapKit and GraphQL Practice-SnapKit and GraphQL PracticeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		00C4A58A28679CC2002BAC3F /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		00C61D2C2869A3E500D2E747 /* UITestConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestConstants.swift; sourceTree = "<group>"; };
+		00C61D2F2869D69E00D2E747 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		00C689D32868884700E6D767 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		00C689D828688C1A00E6D767 /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
 		00C689DB28688CDC00E6D767 /* FilterViewDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewDataModel.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 		00D8ADFA2866D3DD008EC79D = {
 			isa = PBXGroup;
 			children = (
+				00C61D2F2869D69E00D2E747 /* README.md */,
 				00D8AE362866D590008EC79D /* Podfile */,
 				00D8AE052866D3DD008EC79D /* SnapKit and GraphQL Practice */,
 				00D8AE1C2866D3F2008EC79D /* SnapKit and GraphQL PracticeTests */,
@@ -474,6 +477,7 @@
 				00D8AE6F28678843008EC79D /* Roboto-BoldItalic.ttf in Resources */,
 				00D8AE132866D3F0008EC79D /* LaunchScreen.storyboard in Resources */,
 				00D8AE7028678843008EC79D /* Roboto-Italic.ttf in Resources */,
+				00C61D302869D69E00D2E747 /* README.md in Resources */,
 				00D8AE402866DEAC008EC79D /* Queries.graphql in Resources */,
 				00D8AE6C28678843008EC79D /* Roboto-MediumItalic.ttf in Resources */,
 				00D8AE6628678843008EC79D /* Roboto-Bold.ttf in Resources */,
