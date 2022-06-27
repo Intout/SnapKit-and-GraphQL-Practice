@@ -11,9 +11,11 @@ import SnapKit
 class MainTableViewCell: UITableViewCell {
 
     
-    private var backgourndView: UIView = {
+    private var infoContainerView: UIView = {
         let view = UIView()
-        view.backgroundColor  = .white
+        view.backgroundColor  = UIColor.init{ (trait) in
+            return trait.userInterfaceStyle == .dark ? .black : .white
+        }
         view.clipsToBounds = true
         view.layer.cornerRadius = 10
         view.dropShadow(radius: 5, opacity: 0.1, offset: CGSize(width: 0, height: 10))
@@ -73,14 +75,14 @@ class MainTableViewCell: UITableViewCell {
         self.layer.cornerRadius = 10
         
         self.addSubview(headerImageView)
-        self.addSubview(backgourndView)
+        self.addSubview(infoContainerView)
         
-        backgourndView.addSubview(idLabel)
-        backgourndView.addSubview(idTitleLabel)
-        backgourndView.addSubview(nameLabel)
-        backgourndView.addSubview(nameTitleLabel)
-        backgourndView.addSubview(locationLabel)
-        backgourndView.addSubview(locationTitleLabel)
+        infoContainerView.addSubview(idLabel)
+        infoContainerView.addSubview(idTitleLabel)
+        infoContainerView.addSubview(nameLabel)
+        infoContainerView.addSubview(nameTitleLabel)
+        infoContainerView.addSubview(locationLabel)
+        infoContainerView.addSubview(locationTitleLabel)
         
         
         configureConstraints()
@@ -96,16 +98,20 @@ class MainTableViewCell: UITableViewCell {
         headerImageView.snp.makeConstraints{ make in
             make.top.equalToSuperview()
             make.height.equalTo(168)
-            make.width.equalTo(327)
-            make.centerX.equalToSuperview()
+            //make.width.equalTo(327)
+            make.leading.equalToSuperview().offset(24)
+            make.trailing.equalToSuperview().offset(-24)
+            
         }
         
         // Background View
-        backgourndView.snp.makeConstraints{ make in
-            make.width.equalTo(327)
+        infoContainerView.snp.makeConstraints{ make in
+            //make.width.equalTo(327)
+            make.leading.equalToSuperview().offset(24)
+            make.trailing.equalToSuperview().offset(-24)
             make.height.equalTo(97)
             make.top.equalTo(headerImageView.snp.bottom)
-            make.centerX.equalToSuperview()
+            
         }
         
         // ID Labels
@@ -127,8 +133,8 @@ class MainTableViewCell: UITableViewCell {
         
         nameLabel.snp.makeConstraints{ make in
             make.top.equalTo(idLabel.snp.bottom).offset(8)
-            make.leading.equalTo(nameTitleLabel.snp.trailing).offset(5)
             make.trailing.equalTo(8)
+            make.leading.equalTo(nameTitleLabel.snp.trailing).offset(5)
         }
         
         // Location Labels
@@ -139,8 +145,8 @@ class MainTableViewCell: UITableViewCell {
         
         locationLabel.snp.makeConstraints{ make in
             make.top.equalTo(nameTitleLabel.snp.bottom).offset(8)
+            make.trailing.equalToSuperview().offset(-8)
             make.leading.equalTo(locationTitleLabel.snp.trailing).offset(5)
-            make.trailing.equalTo(8)
         }
         
         

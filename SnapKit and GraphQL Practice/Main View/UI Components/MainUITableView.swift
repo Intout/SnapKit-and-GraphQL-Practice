@@ -16,6 +16,7 @@ class MainUITableView: UITableView {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.accessibilityIdentifier = AccessibilityIdentifiers.mainTable.rawValue
         self.separatorStyle = .none
+        self.allowsSelection = false
     }
     
     required init?(coder: NSCoder) {

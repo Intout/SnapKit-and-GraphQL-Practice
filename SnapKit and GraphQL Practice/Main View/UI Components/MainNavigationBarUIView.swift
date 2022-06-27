@@ -55,7 +55,7 @@ class MainNavigationBarUIView: UIView {
         }
         button.snp.makeConstraints{ make in
             make.centerY.equalToSuperview()
-            make.trailing.equalToSuperview()
+            make.trailing.equalToSuperview().offset(-5)
             make.width.equalTo(23)
             make.height.equalTo(23)
         }

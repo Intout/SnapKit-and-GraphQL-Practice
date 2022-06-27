@@ -22,7 +22,9 @@ class FilterUIView: UIView {
     fileprivate lazy var containerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor.init{ (trait) in
+            return trait.userInterfaceStyle == .dark ? .black : .white
+        }
         view.layer.cornerRadius = 10
         return view
     }()
@@ -30,6 +32,10 @@ class FilterUIView: UIView {
     private(set) var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.backgroundColor = UIColor.init{ (trait) in
+            return trait.userInterfaceStyle == .dark ? .black : .white
+        }
+        tableView.separatorStyle = .none
         // for UITest
         tableView.accessibilityIdentifier = AccessibilityIdentifiers.filterTable.rawValue
         return tableView
@@ -41,7 +47,6 @@ class FilterUIView: UIView {
         self.addSubview(containerView)
         containerView.addSubview(titleLabel)
         containerView.addSubview(tableView)
-        tableView.backgroundColor = .white
         configureConstraints()
         
     }

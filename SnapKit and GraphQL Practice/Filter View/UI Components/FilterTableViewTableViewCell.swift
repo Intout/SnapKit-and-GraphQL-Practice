@@ -32,6 +32,10 @@ class FilterTableViewTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.backgroundColor = UIColor.init{ (trait) in
+            return trait.userInterfaceStyle == .dark ? .black : .white
+        }
+        self.selectionStyle = .none
         self.addSubview(label)
         self.addSubview(indicatorView)
         configureConstraints()

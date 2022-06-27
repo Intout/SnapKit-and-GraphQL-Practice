@@ -36,8 +36,8 @@ class SnapKit_and_GraphQL_PracticeUITests: XCTestCase {
         filterButton.tap()
         XCTAssertTrue(filterTableView.exists)
         
-        // Filter for "morty" tag
-        let filterCell = filterTableView.cells["mortyTag"]
+        // Filter for first (rick) tag
+        let filterCell = filterTableView.cells.firstMatch
         filterCell.tap()
         
         // FilterView must disappear after a tag been selected.

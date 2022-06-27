@@ -36,6 +36,10 @@ class ViewController: UIViewController {
         tableView.configureConstraints()
         
         navigationItem.titleView = tabNavigationView
+        view.backgroundColor = UIColor.init{ (trait) in
+            return trait.userInterfaceStyle == .dark ? .black : .white
+        }
+        
         tabNavigationView.configureConstraints()
          
     }
