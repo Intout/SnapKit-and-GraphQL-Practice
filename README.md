@@ -12,6 +12,11 @@ In this application Rick and Morty (TV show) characters fetched from GraphQL's R
 ✅  Integration Test.
 ✅  UITest.
 
+## Running Project
+
+After pulling repository, run "pod install" command on file directory. Open ".workspace" file and perfrom project changes on given warning.
+After project files been indexed, run the project. If an error occurs, build project before running (run script might needed to run). Project can run after build process completed.
+
 ## Method
 
 ### Installing Dependencies
