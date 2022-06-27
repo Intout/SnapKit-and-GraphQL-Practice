@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		004C8F522869DCD200CD3F86 /* FilterTableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004C8F512869DCD200CD3F86 /* FilterTableViewHelper.swift */; };
 		006433D928683C340055932B /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006433D828683C340055932B /* UIView+Extension.swift */; };
-		006433FD2868560F0055932B /* FilterTableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006433FC2868560F0055932B /* FilterTableViewHelper.swift */; };
 		00643400286862E80055932B /* FilterTableViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006433FF286862E80055932B /* FilterTableViewTableViewCell.swift */; };
 		00C4A58B28679CC2002BAC3F /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C4A58A28679CC2002BAC3F /* UIImageView+Extension.swift */; };
 		00C61D2D2869A3E500D2E747 /* UITestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C61D2C2869A3E500D2E747 /* UITestConstants.swift */; };
@@ -75,9 +75,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		004C8F512869DCD200CD3F86 /* FilterTableViewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableViewHelper.swift; sourceTree = "<group>"; };
 		006433D828683C340055932B /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		006433FA2868545E0055932B /* FilterUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterUIView.swift; sourceTree = "<group>"; };
-		006433FC2868560F0055932B /* FilterTableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilterTableViewHelper.swift; path = "../New Group/FilterTableViewHelper.swift"; sourceTree = "<group>"; };
 		006433FF286862E80055932B /* FilterTableViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewTableViewCell.swift; sourceTree = "<group>"; };
 		007EA65435AF4043987D6F63 /* Pods-SnapKit and GraphQL Practice-SnapKit and GraphQL PracticeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapKit and GraphQL Practice-SnapKit and GraphQL PracticeUITests.release.xcconfig"; path = "Target Support Files/Pods-SnapKit and GraphQL Practice-SnapKit and GraphQL PracticeUITests/Pods-SnapKit and GraphQL Practice-SnapKit and GraphQL PracticeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		00C4A58A28679CC2002BAC3F /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
@@ -162,24 +162,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		004C8F502869DCD200CD3F86 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				004C8F512869DCD200CD3F86 /* FilterTableViewHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		00643402286887920055932B /* Filter View */ = {
 			isa = PBXGroup;
 			children = (
 				00C689D32868884700E6D767 /* FilterViewController.swift */,
 				00C689D828688C1A00E6D767 /* FilterViewModel.swift */,
 				00C689D62868888900E6D767 /* UI Components */,
-				00C689D52868887F00E6D767 /* Helpers */,
+				004C8F502869DCD200CD3F86 /* Helpers */,
 				00C689DA28688CCB00E6D767 /* Entities */,
 			);
 			path = "Filter View";
-			sourceTree = "<group>";
-		};
-		00C689D52868887F00E6D767 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				006433FC2868560F0055932B /* FilterTableViewHelper.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		00C689D62868888900E6D767 /* UI Components */ = {
@@ -637,6 +637,7 @@
 				00C4A58B28679CC2002BAC3F /* UIImageView+Extension.swift in Sources */,
 				00C689E12868C6CF00E6D767 /* NetworkingHelper.swift in Sources */,
 				00D8AE4B28671A55008EC79D /* MainViewModel.swift in Sources */,
+				004C8F522869DCD200CD3F86 /* FilterTableViewHelper.swift in Sources */,
 				00D8AE0B2866D3DD008EC79D /* ViewController.swift in Sources */,
 				00D8AE392866DE3B008EC79D /* MainViewDataModel.swift in Sources */,
 				00D8AE5428675BB7008EC79D /* MainNavigationBarUIView.swift in Sources */,
@@ -656,7 +657,6 @@
 				00C689DC28688CDC00E6D767 /* FilterViewDataModel.swift in Sources */,
 				00D8AE7328678BC2008EC79D /* MainTableViewCell.swift in Sources */,
 				00D8AE4D28673869008EC79D /* Data.swift in Sources */,
-				006433FD2868560F0055932B /* FilterTableViewHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
