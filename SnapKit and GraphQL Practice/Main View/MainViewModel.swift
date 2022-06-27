@@ -9,8 +9,6 @@ import Foundation
 
 /// Delegation  to communicate with View.
 protocol MainViewModelDelegate: AnyObject{
-    /// If 
-    /// - Parameter data: <#data description#>
     func didFetched(for data: [CharacterData])
     func didFetchedFailed(with error: Error)
 }
