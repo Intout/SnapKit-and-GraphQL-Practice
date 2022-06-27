@@ -25,8 +25,9 @@ class MainNavigationBarUIView: UIView {
     fileprivate lazy var button: UIButton = {
         let button = UIButton()
         // Default image
-        let buttonImage = UIImage(systemName: "line.3.horizontal.decrease.circle")
+        let buttonImage = UIImage(named: "FilterButton-NonPressed")
         button.setImage(buttonImage, for: .normal)
+        button.clipsToBounds = false
         // For UI testing
         button.accessibilityIdentifier = AccessibilityIdentifiers.filterButton.rawValue
         return button
@@ -56,8 +57,8 @@ class MainNavigationBarUIView: UIView {
         button.snp.makeConstraints{ make in
             make.centerY.equalToSuperview()
             make.trailing.equalToSuperview().offset(-5)
-            make.width.equalTo(23)
-            make.height.equalTo(23)
+            make.width.equalTo(20)
+            make.height.equalTo(20)
         }
 
     }
