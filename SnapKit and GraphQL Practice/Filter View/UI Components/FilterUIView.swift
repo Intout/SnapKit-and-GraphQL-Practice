@@ -36,6 +36,12 @@ class FilterUIView: UIView {
             return trait.userInterfaceStyle == .dark ? .black : .white
         }
         tableView.separatorStyle = .none
+        // Top border
+        let border = UIView()
+        border.backgroundColor = .gray
+        border.autoresizingMask = [.flexibleWidth, .flexibleBottomMargin]
+        border.frame = CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 0.5)
+        tableView.addSubview(border)
         // for UITest
         tableView.accessibilityIdentifier = AccessibilityIdentifiers.filterTable.rawValue
         return tableView
