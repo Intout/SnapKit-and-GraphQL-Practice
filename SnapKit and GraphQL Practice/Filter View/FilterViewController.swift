@@ -48,6 +48,7 @@ extension FilterViewController: FilterViewModelDelegate{
 }
 
 extension FilterViewController: FilterTableDelegate{
+    // Filter tag selected from table view view will be dismissed and delegation invoked to transfer selected tag to Main View.
     func didSelect(tag: FilterTags) {
         delegate?.filterChanged(with: tag)
         dismiss(animated: true)

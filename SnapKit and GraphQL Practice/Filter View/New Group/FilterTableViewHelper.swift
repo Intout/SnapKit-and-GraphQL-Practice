@@ -60,9 +60,11 @@ extension FilterLabelViewHelper: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "filterCell", for: indexPath) as! FilterTableViewTableViewCell
+        
+        // for UITest
+        cell.accessibilityIdentifier = "\(tags[indexPath.item].rawValue.lowercased() + "Tag")"
+        
         cell.label.text = tags[indexPath.item].rawValue
-        
-        
         // Highlights coresponding cell of selected tag.
         if selectedTag == tags[indexPath.item]{
             cell.highlightAsSelected()

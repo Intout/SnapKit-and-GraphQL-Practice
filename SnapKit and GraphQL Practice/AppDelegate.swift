@@ -13,7 +13,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        if CommandLine.arguments.contains("Testing"){
+            // animations disabled to speed up UITesting.
+            UIView.setAnimationsEnabled(false)
+        }
         return true
     }
 

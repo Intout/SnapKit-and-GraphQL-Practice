@@ -27,6 +27,8 @@ class MainNavigationBarUIView: UIView {
         // Default image
         let buttonImage = UIImage(systemName: "line.3.horizontal.decrease.circle")
         button.setImage(buttonImage, for: .normal)
+        // For UI testing
+        button.accessibilityIdentifier = AccessibilityIdentifiers.filterButton.rawValue
         return button
     }()
     

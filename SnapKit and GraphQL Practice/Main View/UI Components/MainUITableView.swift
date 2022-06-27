@@ -14,6 +14,7 @@ class MainUITableView: UITableView {
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
         self.translatesAutoresizingMaskIntoConstraints = false
+        self.accessibilityIdentifier = AccessibilityIdentifiers.mainTable.rawValue
         self.separatorStyle = .none
     }
     
